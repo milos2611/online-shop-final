@@ -13,8 +13,10 @@
     
 
     justify-content: center;
-    max-height: 197px;
+    height: 200px;
+    width: 105%;
     margin-left: -3.666667%;
+   
 }
 
 p {
