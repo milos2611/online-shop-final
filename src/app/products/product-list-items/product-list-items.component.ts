@@ -53,8 +53,10 @@ export class ProductListItemsComponent implements OnInit, OnDestroy {
   }
 
 
-  addToShoppingList(index: number) {
-    this.shop.setProductCart(this.singleProducts[index]);
+  
+
+  addToShoppingList(product:ProductModel) {
+    this.shop.setProductCart(product);
   }
 
   ngOnDestroy() {

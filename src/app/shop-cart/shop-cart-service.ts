@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 export class ShopCartService {
     shopCartChanged = new Subject<ProductModel[]>();
 
-    constructor() {}
+    constructor() { }
     private productCart: ProductModel[] = []
 
 
@@ -21,11 +21,12 @@ export class ShopCartService {
         this.shopCartChanged.next(this.productCart.slice())
     }
 
+    
     setProductCart(product: ProductModel) {
         for (let i = 0; i < this.productCart.length; i++) {
-            if (product.id == this.productCart[i].id && product.numberOfProduct >= 1) {
+            if (product.name == this.productCart[i].name ) {
                 
-                  this.productCart[i].numberOfProduct = product.numberOfProduct + this.productCart[i].numberOfProduct;
+                  this.productCart[i].numberOfProduct += product.numberOfProduct ;
                   return;
                 
 
@@ -34,6 +35,8 @@ export class ShopCartService {
         this.productCart.push(product);
         this.shopCartChanged.next(this.productCart);
 
+
     }
+    
 
 }

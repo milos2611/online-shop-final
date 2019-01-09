@@ -1,14 +1,20 @@
 #numberOfProduct{
     width: 87%;
 }
-p {
-    margin: 8px;
-}
 
-img {
+
+
+.fas{
     
-
-    justify-content: center;
-    max-height: 48px;
+    float: right;
+}
+.fa-trash-alt{
+    color: red;
+}
+td {
+    width:25%
 }
 
+input {
+    width: 45%;
+}
