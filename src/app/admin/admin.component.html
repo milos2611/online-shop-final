@@ -1,0 +1,41 @@
+<div *ngFor="let alert of alerts">
+  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" id="success">{{ alert.msg }}</alert>
+</div>
+<br>
+<div class="row">
+  <div class="col-xs-4">
+    <button type="button" class="btn btn-primary" (click)="openModalCategory()">Create category</button>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="openModalProduct()">Create product</button>
+</div>
+
+
+
+<br>
+
+<table class="table table-bordered" *ngFor="let category of categoryList; let indexCategory = index">
+  <thead>
+    <tr>
+      <th scope="col"># Cateogry: {{category.name}}</th>
+      <th scope="col">Name </th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of category.products; let indexProduct = index">
+      <th scope="row">Product:{{indexProduct}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.price}}
+        <i class="fas fa-trash-alt" (click)="deteleProduct(indexCategory, indexProduct, category)"></i>
+        <i class="fas fa-edit" (click)="openModalProduct(category,true,indexProduct)"></i>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<br>
