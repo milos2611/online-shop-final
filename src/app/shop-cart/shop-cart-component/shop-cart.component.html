@@ -39,7 +39,7 @@
       </td>
       <td>Image: {{products.description}}</td>
 
-      <td>Price: {{products.price}}</td>
+      <td>Price single product: {{products.price | currency}}</td>
 
       <td>
         Number of product:
@@ -54,4 +54,4 @@
 
 <hr>
 
-<h1>Total price:{{priceForAllProducts}}</h1>
+<h1>Total price:{{priceForAllProducts | currency}}</h1>

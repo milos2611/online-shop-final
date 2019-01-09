@@ -4,7 +4,7 @@
     <p>{{ products.name }}</p>
     <img class="col-lg-offset-4" [src]="products.image">
     <p>{{ products.description }}</p>
-    <p>{{ products.price }}</p>
+    <p>{{ products.price | currency }}</p>
     <button class="btn btn-primary" (click)="addToShoppingList(products)">Add in shoop cart</button>
   </div>
 
