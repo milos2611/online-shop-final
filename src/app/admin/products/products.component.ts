@@ -30,7 +30,6 @@ export class ProductModal implements OnInit {
 
   ngOnInit() {
     this.initForm();
-
   }
 
 
@@ -42,6 +41,7 @@ export class ProductModal implements OnInit {
         this.product.name = this.productForm.value.name;
         this.product.image = this.productForm.value.image;
         this.product.description = this.productForm.value.description;
+        this.product.price = this.productForm.value.price;
 
         this.categoryList[i].products.push(this.product);
         this.dataStorageService.storeProduct(this.categoryList[i]).subscribe((product) => {
@@ -60,6 +60,9 @@ export class ProductModal implements OnInit {
     this.data.products[this.indexProduct].name = this.productForm.value.name;
     this.data.products[this.indexProduct].description = this.productForm.value.description;
     this.data.products[this.indexProduct].image = this.productForm.value.image;
+    console.log(this.productForm.value.price)
+    this.data.products[this.indexProduct].price = this.productForm.value.price;
+
 
     this.dataStorageService.editCategory(this.data).subscribe((category => {
 
@@ -71,12 +74,17 @@ export class ProductModal implements OnInit {
     let name = '';
     let description = '';
     let image = '';
+    let price :number;
 
     if (this.editMode) {
 
       name = this.data.products[this.indexProduct].name;
       description = this.data.products[this.indexProduct].description;
       image = this.data.products[this.indexProduct].image;
+      console.log(this.data.products[this.indexProduct].price)
+
+      price = this.data.products[this.indexProduct].price;
+
     }
 
     this.productForm = new FormGroup({
@@ -84,7 +92,7 @@ export class ProductModal implements OnInit {
       'name': new FormControl(name, Validators.required),
       'description': new FormControl(description, Validators.required),
       'image': new FormControl(image, Validators.required),
-      'price': new FormControl(image, Validators.required)
+      'price': new FormControl(price, Validators.required)
 
     })
   }
