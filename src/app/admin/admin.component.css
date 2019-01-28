@@ -1,0 +1,20 @@
+#success {
+    width: 800px;
+    position: absolute;
+    left: 20%;
+
+    
+}
+
+.fas{
+    
+    float: right;
+}
+.fa-trash-alt{
+    color: red;
+}
+
+th {
+    width:25%
+}
+

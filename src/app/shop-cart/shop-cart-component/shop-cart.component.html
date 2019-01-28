@@ -1,0 +1,29 @@
+
+
+
+<br>
+<table class="table table-bordered" *ngFor="let products of productCarts; let i = index">
+
+  <tbody>
+    <tr>
+      <td>
+        Name: {{products.name}}
+      </td>
+      <td>Image: {{products.description}}</td>
+
+      <td>Price single product: {{products.price | currency}}</td>
+
+      <td>
+        Number of product:
+        <input type="number" (ngModelChange)="setPrice($event,i)" min="1" [(ngModel)]="products.numberOfProduct">
+        <i class="fas fa-trash-alt" (click)="deleteFromCart(i)"></i>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<hr>
+
+<h1>Total price:{{priceForAllProducts | currency}}</h1>

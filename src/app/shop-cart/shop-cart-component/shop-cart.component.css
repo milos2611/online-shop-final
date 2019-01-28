@@ -1,0 +1,20 @@
+#numberOfProduct{
+    width: 87%;
+}
+
+
+
+.fas{
+    
+    float: right;
+}
+.fa-trash-alt{
+    color: red;
+}
+td {
+    width:25%
+}
+
+input {
+    width: 45%;
+}
