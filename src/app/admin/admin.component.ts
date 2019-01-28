@@ -91,9 +91,14 @@ export class AdminComponent implements OnInit {
   }
 
   deteleCategory(indexProduct: number, category: CategoryModel) {
+<<<<<<< HEAD
     this.categoryList.splice(indexProduct, 1);
 
     this.dataStorageService.deleteCategory(category).subscribe();
+=======
+    this.dataStorageService.deleteCategory(category).subscribe();
+    this.categoryList.splice(indexProduct, 1);
+>>>>>>> 2da91ea3f62bee9d35a50527d2a5de5eb932cf8f
 
   }
 
